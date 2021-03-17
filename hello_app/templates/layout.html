@@ -20,12 +20,17 @@
     <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}"  /> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
+
+
 {% block body %}
-    <div class="navbar">
-        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-        <a href="{{ url_for('contact') }}" class="navbar-item">Contact</a>
-    </div>
+    {% block navbar %}
+    {{ super() }}
+        <div class="navbar navbar-fixed-top">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+            <a href="{{ url_for('contact') }}" class="navbar-item">Contact</a>
+        </div>
+    {% endblock %}
 
     <div class="body-content">
         {% block content %}
