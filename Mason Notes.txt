@@ -1,0 +1,13 @@
+Building off of two examples:
+1. https://github.com/microsoft/python-sample-vscode-flask-tutorial
+2. https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html
+
+1 is the base repo and 2 is the one with the forms app.
+
+pip install Flask-WTF Flask-Bootstrap4 wtforms
+
+Form fields can be found here:
+https://github.com/macloo/python-adv-web-apps/blob/master/python_code_examples/flask/forms/WTForms-field-types.csv
+
+I will include a copy of this in my repo.
+
