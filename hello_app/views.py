@@ -1,7 +1,9 @@
 from datetime import datetime
 from flask import Flask, render_template, redirect, url_for
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, TextAreaField, RadioField, BooleanField, \
+    SelectField, DateField, DateTimeField, IntegerField, DecimalField, FloatField, SelectMultipleField, \
+        FileField, FormField, FieldList
 from wtforms.validators import DataRequired
 
 # My Local imports
@@ -11,6 +13,22 @@ from . import app
 
 class NameForm(FlaskForm):
     name = StringField('Which actor is your favorite?', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class ProgramSetupForm(FlaskForm):
+    name = StringField('Which actor is your favorite?', validators=[DataRequired()])
+    textArea = TextAreaField('Some text:')
+    radio = RadioField('Pick some:',choices=['A','B']) 
+    boolean = BooleanField('True/False?')
+    select = SelectField('Select one:',choices=['A','B','C'])
+    date = DateField('Pick a date:') 
+    dt = DateTimeField('Pick a datetime:')
+    integ = IntegerField('Select an integer:') 
+    dec = DecimalField('Select a decimal:')
+    floate = FloatField('Select a float:')
+    pickmult = SelectMultipleField('Select multiple:',choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
+    filep = FileField('Pick a file:')
+    embedform = FormField(NameForm)     
     submit = SubmitField('Submit')
 
 # @app.route("/", methods=['GET', 'POST'])
@@ -58,9 +76,13 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 
-@app.route("/about/")
-def about():
-    return render_template("about.html")
+@app.route("/program_setup/", methods=['GET', 'POST'])
+def program_setup():
+    form = ProgramSetupForm()
+    message = "Sample message"
+    if form.validate_on_submit():
+        name = form.name.data        
+    return render_template("program_setup.html", form=form, message=message)
 
 @app.route("/contact/")
 def contact():

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}
+Program Setup
+{% endblock %}
+{% block content %}
+
+<p>About page for the Visual Studio Code Flask tutorial.</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+  
+        <h1 class="pt-5 pb-2">Enter values into this form</h1>
+  
+        <p class="lead">Sample of field types for forms.</p>
+  
+        {{ wtf.quick_form(form) }}
+  
+        <p class="pt-5"><strong>{{ message }}</strong></p>
+  
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
