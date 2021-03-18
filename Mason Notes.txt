@@ -11,3 +11,25 @@ https://github.com/macloo/python-adv-web-apps/blob/master/python_code_examples/f
 
 I will include a copy of this in my repo.
 
+====
+Other examples
+https://blog.ruanbekker.com/blog/2018/05/27/web-forms-with-python-flask-and-the-wtforms-module-with-bootstrap/
+
+https://john.soban.ski/pass-bootstrap-html-attributes-to-flask-wtforms.html
+
+https://reactuatesoftware.com/flaskwtforms-create-and-customize-from-from-model/
+
+=====
+
+R...y
+ICs
+Runs per Month
+Months
+Sim Date (DD MMM YYYY)
+Output directory
+Notes
+
+Output Types (would be a new feature)
+
+Sim Option (radio buttons?):
+1-9, but simplify a bit. Ex. dispersed / nominal
