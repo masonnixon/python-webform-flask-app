@@ -18,9 +18,9 @@ class NameForm(FlaskForm):
 class ProgramSetupForm(FlaskForm):
     name = StringField('Which actor is your favorite?', validators=[DataRequired()])
     textArea = TextAreaField('Some text:')
-    radio = RadioField('Pick some:',choices=['A','B']) 
+    radio = RadioField('Pick some:',choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')]) 
     boolean = BooleanField('True/False?')
-    select = SelectField('Select one:',choices=['A','B','C'])
+    select = SelectField('Select one:',choices=[('cpp', 'C++'), ('py', 'Python')])
     date = DateField('Pick a date:') 
     dt = DateTimeField('Pick a datetime:')
     integ = IntegerField('Select an integer:') 

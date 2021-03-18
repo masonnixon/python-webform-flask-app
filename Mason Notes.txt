@@ -4,7 +4,11 @@ Building off of two examples:
 
 1 is the base repo and 2 is the one with the forms app.
 
-pip install Flask-WTF Flask-Bootstrap4 wtforms
+First, make sure in VS Code to do this and select the correct Python interpretter:
+In VS Code, open the Command Palette (View > Command Palette or (Ctrl+Shift+P)). Then select the Python: Select Interpreter command.
+
+Then install these:
+pip install flask Flask-WTF Flask-Bootstrap4 wtforms
 
 Form fields can be found here:
 https://github.com/macloo/python-adv-web-apps/blob/master/python_code_examples/flask/forms/WTForms-field-types.csv
@@ -18,6 +22,33 @@ https://blog.ruanbekker.com/blog/2018/05/27/web-forms-with-python-flask-and-the-
 https://john.soban.ski/pass-bootstrap-html-attributes-to-flask-wtforms.html
 
 https://reactuatesoftware.com/flaskwtforms-create-and-customize-from-from-model/
+
+==== For VS Code: launch.json======
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "hello_app.webapp",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "0"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+    ]
+}
 
 =====
 
